@@ -1,4 +1,4 @@
-# Boilerplate react application
+## Boilerplate react application
 
 This boilerplate react application was created using `create-react-app` and configured with the options as described in the original `README.md` file
 
@@ -22,3 +22,7 @@ yarn test
 - Automatic code formatting using prettier
 - SASS stylesheets
 - Testing with Jest and Enzyme
+
+## Store working with Redux and Redux toolkit
+
+## Styling working with Reactstrap and Bootstrap 5
