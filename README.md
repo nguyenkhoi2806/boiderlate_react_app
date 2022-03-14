@@ -8,11 +8,11 @@ To setup the project, check it out and init the dependencies using `yarn install
 
 ## Commands
 
-# Start the development server using
+## Start the development server using
 
 yarn start
 
-# Start the test runner
+## Start the test runner
 
 yarn test
 
