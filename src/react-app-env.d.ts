@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 /// <reference types="node" />
 /// <reference types="react-dom" />
 
