@@ -2,16 +2,20 @@ import { FormGroup, Input, Label } from 'reactstrap';
 import { InputType } from 'reactstrap/types/lib/Input';
 
 interface InputFieldProps {
-  label: string;
-  onChange: () => void;
-  classNameWrapper: string;
-  placeholder: string;
+  label?: string;
+  onChange: (value: string | number | [] | boolean) => void;
+  classNameWrapper?: string;
+  placeholder?: string;
   type: InputType;
-  name: string;
+  name?: string;
 }
 
 const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
   const { label, onChange, classNameWrapper, placeholder, type, name } = props;
+
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    return onChange(event.target.value);
+  };
 
   return (
     <FormGroup className={classNameWrapper}>
@@ -20,7 +24,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
         name={name}
         placeholder={placeholder}
         type={type}
-        onChange={onChange}
+        onChange={onChangeInput}
       />
     </FormGroup>
   );
