@@ -38,7 +38,6 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
   return (
     <FormGroup className={classNameWrapper}>
       {label && <Label>{label}</Label>}
-
       {type === SELECT ? (
         <Input name={name} type={SELECT} onChange={onChangeInput}>
           {options.map((option, key) => (
