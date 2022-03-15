@@ -2,13 +2,20 @@ import { FormGroup, Input, Label } from 'reactstrap';
 import { InputType } from 'reactstrap/types/lib/Input';
 
 interface InputFieldProps {
-  label?: string;
   onChange: (value: string | number | [] | boolean) => void;
+  type: InputType;
+  label?: string;
   classNameWrapper?: string;
   placeholder?: string;
-  type: InputType;
   name?: string;
 }
+
+const defaultProps = {
+  label: '',
+  classNameWrapper: '',
+  placeholder: '',
+  name: '',
+};
 
 const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
   const { label, onChange, classNameWrapper, placeholder, type, name } = props;
@@ -29,5 +36,7 @@ const InputField: React.FC<InputFieldProps> = (props: InputFieldProps) => {
     </FormGroup>
   );
 };
+
+InputField.defaultProps = defaultProps;
 
 export default InputField;
