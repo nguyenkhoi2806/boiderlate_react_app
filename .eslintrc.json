@@ -34,7 +34,7 @@
     "simple-import-sort/exports": "error",
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-closing-tag-location": "error",
-    "operator-linebreak": ["error", "before"],
+    "operator-linebreak": ["error", "after"],
     "react-hooks/rules-of-hooks": "error",
     "react/react-in-jsx-scope": "off"
   },
