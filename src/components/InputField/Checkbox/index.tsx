@@ -5,12 +5,12 @@ interface CheckboxProps {
   label: string;
   value: string | number;
   id: string;
-  defaultValue: string | number;
+  checked?: boolean;
   inline?: boolean;
 }
 
 const Checkbox = (props: CheckboxProps) => {
-  const { label, value, defaultValue, id, inline, onChange } = props;
+  const { label, value, checked, id, inline, onChange } = props;
 
   return (
     <FormGroup inline={inline}>
@@ -18,7 +18,7 @@ const Checkbox = (props: CheckboxProps) => {
         type="checkbox"
         value={value}
         id={id}
-        checked={defaultValue === value}
+        checked={checked}
         onChange={onChange}
       />
       <Label for={id}>{label}</Label>
@@ -29,6 +29,7 @@ const Checkbox = (props: CheckboxProps) => {
 Checkbox.defaultProps = {
   inline: false,
   defaultValue: '',
+  checked: false,
 };
 
 export default Checkbox;

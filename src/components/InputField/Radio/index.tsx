@@ -5,12 +5,12 @@ interface RadioProps {
   label: string;
   value: string | number;
   name: string;
-  defaultValue: string | number;
+  checked?: boolean;
   inline: boolean;
 }
 
 const Radio = (props: RadioProps) => {
-  const { label, value, defaultValue, name, inline, onChange } = props;
+  const { label, value, checked, name, inline, onChange } = props;
 
   return (
     <FormGroup inline={inline}>
@@ -18,7 +18,7 @@ const Radio = (props: RadioProps) => {
         type="radio"
         value={value}
         name={name}
-        checked={defaultValue === value}
+        checked={checked}
         onChange={onChange}
       />
       <Label for={`${name}_${value}`}>{label}</Label>
@@ -29,6 +29,7 @@ const Radio = (props: RadioProps) => {
 Radio.defaultProps = {
   inline: false,
   defaultValue: '',
+  checked: false,
 };
 
 export default Radio;

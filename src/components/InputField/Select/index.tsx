@@ -1,14 +1,14 @@
 import { Input } from 'reactstrap';
 
 interface SelectProps {
-  defaultValue: string | number;
+  value: string | number;
   options: { value: string | number; label: string }[];
   onChange: () => void;
   name: string;
 }
 
 const Select = (props: SelectProps) => {
-  const { defaultValue, options, onChange, name } = props;
+  const { value, options, onChange, name } = props;
 
   return (
     <Input name={name} type="select" onChange={onChange}>
@@ -16,7 +16,7 @@ const Select = (props: SelectProps) => {
         <option
           key={index}
           value={option.value}
-          selected={defaultValue === option.value}>
+          selected={value === option.value}>
           {option.label}
         </option>
       ))}
@@ -27,7 +27,7 @@ const Select = (props: SelectProps) => {
 Select.defaultProps = {
   classNameWrapper: '',
   label: '',
-  defaultValue: '',
+  value: '',
   options: [],
   name: '',
 };

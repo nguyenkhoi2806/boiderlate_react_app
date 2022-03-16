@@ -2,12 +2,12 @@ import Checkbox from '../Checkbox';
 
 interface CheckboxGroupProps {
   onChange: () => void;
-  defaultValue: string | number;
+  checked: boolean;
   options: { value: string | number; label: string }[];
 }
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { defaultValue, options, onChange } = props;
+  const { checked, options, onChange } = props;
 
   return (
     <>
@@ -16,7 +16,7 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
           key={index}
           value={option.value}
           label={option.label}
-          defaultValue={defaultValue}
+          checked={checked}
           id={`${option.value}_${index}`}
           onChange={onChange}
         />

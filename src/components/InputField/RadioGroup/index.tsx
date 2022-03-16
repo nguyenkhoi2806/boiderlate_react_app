@@ -2,13 +2,13 @@ import Radio from '../Radio';
 
 interface RadioGroupProps {
   onChange: () => void;
-  defaultValue: string | number;
+  checked: boolean;
   options: { value: string | number; label: string }[];
   name: string;
 }
 
 const RadioGroup = (props: RadioGroupProps) => {
-  const { defaultValue, options, name, onChange } = props;
+  const { checked, options, name, onChange } = props;
 
   return (
     <>
@@ -17,7 +17,7 @@ const RadioGroup = (props: RadioGroupProps) => {
           key={index}
           value={option.value}
           label={option.label}
-          defaultValue={defaultValue}
+          checked={checked}
           name={`${name}`}
           onChange={onChange}
         />
