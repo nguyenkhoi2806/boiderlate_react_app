@@ -3,6 +3,7 @@ import { FormGroup, Label } from 'reactstrap';
 import Checkbox from '../Checkbox';
 
 interface CheckboxGroupProps {
+  onChange: () => void;
   classNameWrapper: string;
   label: string;
   defaultValue: string | number;
@@ -10,7 +11,7 @@ interface CheckboxGroupProps {
 }
 
 const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { label, defaultValue, options, classNameWrapper } = props;
+  const { label, defaultValue, options, classNameWrapper, onChange } = props;
 
   return (
     <FormGroup className={classNameWrapper}>
@@ -22,6 +23,7 @@ const CheckboxGroup = (props: CheckboxGroupProps) => {
           label={option.label}
           defaultValue={defaultValue}
           id={`${option.value}_${index}`}
+          onChange={onChange}
         />
       ))}
     </FormGroup>

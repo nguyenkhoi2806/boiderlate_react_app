@@ -3,6 +3,7 @@ import { FormGroup, Label } from 'reactstrap';
 import Radio from '../Radio';
 
 interface RadioGroupProps {
+  onChange: () => void;
   classNameWrapper: string;
   label: string;
   defaultValue: string | number;
@@ -11,7 +12,8 @@ interface RadioGroupProps {
 }
 
 const RadioGroup = (props: RadioGroupProps) => {
-  const { label, defaultValue, options, classNameWrapper, name } = props;
+  const { label, defaultValue, options, classNameWrapper, name, onChange } =
+    props;
 
   return (
     <FormGroup className={classNameWrapper}>
@@ -23,6 +25,7 @@ const RadioGroup = (props: RadioGroupProps) => {
           label={option.label}
           defaultValue={defaultValue}
           name={`${name}`}
+          onChange={onChange}
         />
       ))}
     </FormGroup>

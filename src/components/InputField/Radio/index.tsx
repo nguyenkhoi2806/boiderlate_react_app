@@ -1,6 +1,7 @@
 import { FormGroup, Input, Label } from 'reactstrap';
 
 interface RadioProps {
+  onChange: () => void;
   label: string;
   value: string | number;
   name: string;
@@ -9,7 +10,7 @@ interface RadioProps {
 }
 
 const Radio = (props: RadioProps) => {
-  const { label, value, defaultValue, name, inline } = props;
+  const { label, value, defaultValue, name, inline, onChange } = props;
 
   return (
     <FormGroup inline={inline}>
@@ -18,6 +19,7 @@ const Radio = (props: RadioProps) => {
         value={value}
         name={name}
         checked={defaultValue === value}
+        onChange={onChange}
       />
       <Label for={`${name}_${value}`}>{label}</Label>
     </FormGroup>
