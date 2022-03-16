@@ -6,11 +6,11 @@ import {
   SELECT,
 } from 'constants/FieldType';
 
-import Checkbox from './Checkbox';
-import CheckboxGroup from './CheckboxGroup';
-import Radio from './Radio';
-import RadioGroup from './RadioGroup';
-import Select from './Select';
+import Checkbox from './type/Checkbox';
+import CheckboxGroup from './type/CheckboxGroup';
+import Radio from './type/Radio';
+import RadioGroup from './type/RadioGroup';
+import Select from './type/Select';
 
 interface InputTypeProps {
   type: string;
