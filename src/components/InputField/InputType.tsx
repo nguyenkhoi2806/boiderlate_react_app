@@ -11,6 +11,7 @@ import CheckboxGroup from './type/CheckboxGroup';
 import Radio from './type/Radio';
 import RadioGroup from './type/RadioGroup';
 import Select from './type/Select';
+import Text from './type/Text';
 
 interface InputTypeProps {
   type: string;
@@ -21,10 +22,21 @@ interface InputTypeProps {
   label: string;
   value: string | number;
   checked: boolean;
+  placeholder: string;
 }
 
 const InputType = (props: InputTypeProps) => {
-  const { type, onChange, value, checked, label, id, options, name } = props;
+  const {
+    type,
+    onChange,
+    value,
+    checked,
+    label,
+    id,
+    options,
+    name,
+    placeholder,
+  } = props;
 
   switch (type) {
     case CHECKBOX:
@@ -71,6 +83,15 @@ const InputType = (props: InputTypeProps) => {
           onChange={onChange}
           options={options}
           value={value}
+          name={name}
+        />
+      );
+    default:
+      return (
+        <Text
+          value={value}
+          placeholder={placeholder}
+          onChange={onChange}
           name={name}
         />
       );

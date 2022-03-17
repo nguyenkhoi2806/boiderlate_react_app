@@ -1,19 +1,19 @@
 import { Input } from 'reactstrap';
 
-interface DefaultProps {
+interface TextProps {
   name: string;
-  type: string;
   onChange: () => void;
   placeholder: string;
   value: string | number;
 }
 
-const Default = (props: DefaultProps) => {
-  const { name, type, onChange, placeholder, value } = props;
+const Text = (props: TextProps) => {
+  const { name, onChange, placeholder, value } = props;
+
   return (
     <Input
       name={name}
-      type={type}
+      type="text"
       onChange={onChange}
       placeholder={placeholder}
       value={value}
@@ -21,4 +21,4 @@ const Default = (props: DefaultProps) => {
   );
 };
 
-export default Default;
+export default Text;
